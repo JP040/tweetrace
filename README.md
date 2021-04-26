@@ -14,3 +14,9 @@ Small data pipeline project to stream tweets relating to three selected German p
 - streamlit - to create the front-end - `pip install streamlit`
 - matplotlib - to use for data visualization - `pip install matplotlib`
 - plotly - to use for interactive data visualization - `pip install plotly`
+
+## Getting started
+
+### Config files
+After successfully applying for Twitter API access fill in the received access details in the *twitter_config.py* file.
+Enter you connection details for the database you want to use in the *db_config.py* file.
