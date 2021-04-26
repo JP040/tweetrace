@@ -11,3 +11,6 @@ Small data pipeline project to stream tweets relating to three selected German p
 - pandas - for data wrangling - `pip install pandas`
 - transformers - to load BERT model for sentiment analysis - `pip install transformers`
 - torch - to use BERT model for predictions - see https://pytorch.org/ 
+- streamlit - to create the front-end - `pip install streamlit`
+- matplotlib - to use for data visualization - `pip install matplotlib`
+- plotly - to use for interactive data visualization - `pip install plotly`
