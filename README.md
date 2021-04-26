@@ -18,6 +18,7 @@ Small data pipeline project to stream tweets relating to three selected German p
 - plotly - to use for interactive data visualization - `pip install plotly`
 
 ## Getting started
+Clone the repository - `git clone https://github.com/JP040/tweetrace.git`
 
 ### Config files
 After successfully applying for Twitter API access fill in the received access details in the *twitter_config.py* file.
