@@ -1,7 +1,7 @@
 # Tweetrace
 # 🏁 🏁 🏁
 ## Overview
-Small data pipeline project to stream tweets, analyze their underlying sentiments and display results in a Streamlit front-end. For final output see https://tweetrace.herokuapp.com/
+Small data pipeline project to stream tweets relating to three selected German politicians, analyze their underlying sentiments and display results as scores in a Streamlit front-end. For final output see https://tweetrace.herokuapp.com/
 
 ## Requirements
 - Twitter credentials to access API - see https://developer.twitter.com/en/apply-for-access
