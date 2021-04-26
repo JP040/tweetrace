@@ -4,8 +4,10 @@
 Small data pipeline project to stream tweets relating to three selected German politicians, analyze their underlying sentiments and display results as scores in a Streamlit front-end. For final output see https://tweetrace.herokuapp.com/
 
 ## Requirements
+### General
 - Twitter credentials to access API - see https://developer.twitter.com/en/apply-for-access
 - Access to a PostgreSQL database (e.g. on AWS or locally hosted)
+### Dependencies
 - tweepy - to access the Twitter API - `pip install tweepy`
 - sqlalchemy - to access the SQL database - `pip install sqlalchemy`
 - pandas - for data wrangling - `pip install pandas`
