@@ -25,4 +25,5 @@ Enter you connection details for the database you want to use in the *db_config.
 
 ### Twitter stream
 The `stream.filter` method in *get_tweets_streaming.py* can be adjusted, e.g. to track a different set of words, names etc. or filter tweets in a different language than German. 
+
 See Tweepy documentation for further information on parameters https://docs.tweepy.org/en/latest/stream.html
