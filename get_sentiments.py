@@ -85,6 +85,7 @@ if __name__ == '__main__':
             tweets = pd.read_sql('tweets', engine)
         print('Raw tweets loaded from DB')
         print(f'{len(tweets)} tweets collected')
+        
         #Check if table is empty and if so wait and start over
         if tweets.empty == True:
             print(f'No new tweets in table. Will go to sleep for 5 min. - {time.asctime( time.localtime(time.time()) )}')
@@ -130,10 +131,6 @@ if __name__ == '__main__':
         engine.execute(delete_query,last_tweet_dt)
 
         print('Raw tweets deleted from table')
-
-        #BREAK FOR DEVELOPMENT STAGE
-        print('Done! Breaking for now')
-        break
 
         # Wait for 2 min before repeating
         print(f'Waiting for 2 min. - {time.asctime( time.localtime(time.time()) )}')
