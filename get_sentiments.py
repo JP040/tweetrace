@@ -22,8 +22,8 @@ engine = create_engine(conn_string, echo=False)
 print('Connection to DB established')
 
 #Initialize BERT Model
-model = AutoModelForSequenceClassification.from_pretrained('savedmodels/bert-fine-tuned-gersent-final')
-tokenizer = AutoTokenizer.from_pretrained('savedmodels/bert-fine-tuned-gersent-final')
+model = AutoModelForSequenceClassification.from_pretrained('oliverguhr/german-sentiment-bert')
+tokenizer = AutoTokenizer.from_pretrained('oliverguhr/german-sentiment-bert')
 
 print('BERT model loaded')
 
