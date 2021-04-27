@@ -35,4 +35,7 @@ Processing the tweets and deriving their underlying sentiments is based on a fin
     model = AutoModelForSequenceClassification.from_pretrained('...')
     tokenizer = AutoTokenizer.from_pretrained('...')
     
-CAUTION: The labels ("positive", "negative", "neutral") for sentiment classification might be different in other models and break the code when tranforming the predicted sentiment of a tweet to *+1*, *-1* or *0*. Therefore, the `tweet_to_score` function might need to be adjusted.
+The labels ("positive", "negative", "neutral") for sentiment classification might be different in other models and break the code when tranforming the predicted sentiment of a tweet to *+1*, *-1* or *0*. Therefore, the `tweet_to_score` function might need to be adjusted.
+
+### Streamlit - *streamlit_app.py*
+In order to run the Streamlit front-end enter `streamlit run streamlit_app.py`
