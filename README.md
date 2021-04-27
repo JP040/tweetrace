@@ -24,7 +24,15 @@ Clone the repository - `git clone https://github.com/JP040/tweetrace.git`
 After successfully applying for Twitter API access fill in the received access details in the *twitter_config.py* file.
 Enter you connection details for the database you want to use in the *db_config.py* file.
 
-### Twitter stream
+### Twitter stream - *get_tweets_streaming.py*
 The `stream.filter` method in *get_tweets_streaming.py* can be adjusted, e.g. to track a different set of words, names etc. or filter tweets in a different language than German. 
 
 See Tweepy documentation for further information on parameters https://docs.tweepy.org/en/latest/stream.html
+
+### Sentiment analysis - *get_sentiments.py*
+Processing the tweets and deriving their underlying sentiments is based on a fine-tuned BERT model from the Transformers Library (https://huggingface.co/oliverguhr/german-sentiment-bert). The code can be adjusted to use other models suitable for sentiment classification from the Transformers Library by replacing the current repository reference in the following code block with the repository of another model:
+    
+    model = AutoModelForSequenceClassification.from_pretrained('...')
+    tokenizer = AutoTokenizer.from_pretrained('...')
+    
+CAUTION: The labels ("positive","negative","neutral") for sentiment classification might be different in other models and break the code when tranforming the predicted sentiment of a tweet to *+1*, *-1* or *0*. Therefore, the `tweet_to_score` function might need to be adjusted.
