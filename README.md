@@ -2,7 +2,9 @@
 # 🏁 🏁 🏁
 ## Overview
 Small data pipeline project to stream tweets relating to three selected German politicians, analyze their underlying sentiments and display results as scores in a Streamlit front-end. For final output see https://tweetrace.herokuapp.com/
-![Screenshot](/images/screenshot.png)
+
+![Screenshot](/images/screenshot.PNG)
+
 ## Requirements
 ### General
 - Twitter credentials to access API - see https://developer.twitter.com/en/apply-for-access
@@ -18,6 +20,8 @@ Small data pipeline project to stream tweets relating to three selected German p
 - plotly - to use for interactive data visualization - `pip install plotly`
 
 ## How it works
+
+![Overview](/images/overview.PNG)
 
 ### Config files - *twitter_config.py*, *db_config.py*
 These files contain the connection details to access the Twitter API and the PostgreSQL database
