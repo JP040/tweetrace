@@ -20,7 +20,7 @@ Small data pipeline project to stream tweets relating to three selected German p
 ## Getting started
 Clone the repository - `git clone https://github.com/JP040/tweetrace.git`
 
-### Config files
+### Config files - *twitter_config.py*, *db_config.py*
 After successfully applying for Twitter API access fill in the received access details in the *twitter_config.py* file.
 Enter you connection details for the database you want to use in the *db_config.py* file.
 
