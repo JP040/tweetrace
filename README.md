@@ -17,25 +17,25 @@ Small data pipeline project to stream tweets relating to three selected German p
 - matplotlib - to use for data visualization - `pip install matplotlib`
 - plotly - to use for interactive data visualization - `pip install plotly`
 
-## Getting started
-Clone the repository - `git clone https://github.com/JP040/tweetrace.git`
+## How it works
 
 ### Config files - *twitter_config.py*, *db_config.py*
-After successfully applying for Twitter API access fill in the received access details in the *twitter_config.py* file.
-Enter you connection details for the database you want to use in the *db_config.py* file.
+These files contain the connection details to access the Twitter API and the PostgreSQL database
 
 ### Twitter stream - *get_tweets_streaming.py*
-The `stream.filter` method in *get_tweets_streaming.py* can be adjusted, e.g. to track a different set of words, names etc. or filter tweets in a different language than German. 
-
+Connects to the Twitter API and creates a Stream object to filter tweets in realtime. The filtered tweets are stored in a temporary table in the database. Retweets are ignored.
+The `stream.filter` method of the Stream object can be adjusted, e.g. to track a different set of words, names etc. or filter tweets in a different language than German. 
 See Tweepy documentation for further information on parameters https://docs.tweepy.org/en/latest/stream.html
 
 ### Sentiment analysis - *get_sentiments.py*
-Processing the tweets and deriving their underlying sentiments is based on a fine-tuned BERT model from the Transformers Library (https://huggingface.co/oliverguhr/german-sentiment-bert). The code can be adjusted to use other models suitable for sentiment classification from the Transformers Library by replacing the current repository reference in the following code block with the repository of another model:
-    
-    model = AutoModelForSequenceClassification.from_pretrained('...')
-    tokenizer = AutoTokenizer.from_pretrained('...')
-    
-The labels ("positive", "negative", "neutral") for sentiment classification might be different in other models and break the code when tranforming the predicted sentiment of a tweet to *+1*, *-1* or *0*. Therefore, the `tweet_to_score` function might need to be adjusted.
+Loads a fine-tuned BERT model to process tweets and derive their underlying sentiments. Returns *+1* for as positive, *-1* for a negative and *0* for a neutral sentiment.
+
+The model is based on a already fine-tuned BERT model from the Transformers Library (https://huggingface.co/oliverguhr/german-sentiment-bert) that was further trained with labeled tweets and is saved locally. To enable the code to work without the local copy the path to the locally saved model was replaced by the path to the original model from the Transformers Library.
+
+The processed tweets are stored in a different table of the database. Afterwards the raw tweets are deleted from the temporary table.
 
 ### Streamlit - *streamlit_app.py*
+Calculates the daily mean of the sentiment score and the daily count of collected tweets per politician name. The results are displayed in an interactive Plotly graph.
+Configures a Streamlit front-end and embeds the Plotly graph as well as text for Explanation and References.
+
 In order to run the Streamlit front-end enter `streamlit run streamlit_app.py` in the terminal.
