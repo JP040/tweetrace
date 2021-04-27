@@ -32,7 +32,7 @@ Loads a fine-tuned BERT model to process tweets and derive their underlying sent
 
 The model is based on a already fine-tuned BERT model from the Transformers Library (https://huggingface.co/oliverguhr/german-sentiment-bert) that was further trained with labeled tweets and is saved locally. To enable the code to work without the local copy the path to the locally saved model was replaced by the path to the original model from the Transformers Library.
 
-The processed tweets are stored in a different table of the database. Afterwards the raw tweets are deleted from the temporary table.
+The processed tweets are stored with their respective score in a different table of the database. Afterwards the raw tweets are deleted from the temporary table.
 
 ### Streamlit - *streamlit_app.py*
 Calculates the daily mean of the sentiment score and the daily count of collected tweets per politician name. The results are displayed in an interactive Plotly graph.
